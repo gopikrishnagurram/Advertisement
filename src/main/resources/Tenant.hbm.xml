@@ -1,0 +1,15 @@
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.hibernate.org/xsd/hibernate-mapping
+        http://www.hibernate.org/xsd/hibernate-mapping/hibernate-mapping-4.0.xsd">
+
+	<class name="com.wavelabs.model.Tenant" table="tenant">
+		<id name="id" column="id">
+			<generator class="increment" />
+		</id>
+		<property name="clientId" column="clientId"></property>
+		<property name="expirationTime" column="expirationTime"></property>
+		<property name="expired" column="expired"></property>
+		<property name="tenantId" column="tenantId"></property>
+	</class>
+</hibernate-mapping>

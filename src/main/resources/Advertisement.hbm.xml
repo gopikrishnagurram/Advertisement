@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.wavelabs.model.Advertisement" table="advertisement">
+		<id name="id" column="id">
+			<generator class="increment" />
+		</id>
+		<property name="name" column="name"></property>
+		<property name="type" column="type">
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.wavelabs.model.enums.AdvertisementType</param>
+				<param name="useNamed">true</param>
+			</type>
+		</property>
+		<property name="description" column="description"></property>
+		<property name="location" column="location"></property>
+		<many-to-one name="user" class="com.wavelabs.model.User"
+			lazy="false" not-null="true"></many-to-one>
+	</class>
+</hibernate-mapping>
